@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Terminal, Code, Cpu, Activity, Globe, MessageSquare } from "lucide-react";
+import { Terminal, Code, Cpu, Activity, Globe } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -118,7 +118,7 @@ function StatusCard({ label, value, icon }: { label: string, value: string, icon
   );
 }
 
-function ProjectCard({ project }: { project: any }) {
+function ProjectCard({ project }: { project: { name: string; desc: string; status: string; link: string; icon: React.ReactNode; color: string } }) {
   return (
     <Link href={project.link} target={project.link.startsWith("http") ? "_blank" : "_self"} className={`group block bg-gray-900/10 border ${project.color} p-4 rounded transition-all hover:bg-gray-900/30`}>
       <div className="flex justify-between items-start mb-2">
